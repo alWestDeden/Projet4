@@ -1,0 +1,245 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap);
+h1 {
+  font-family: "Shrikhand";
+  font-size: 1.875rem;
+  color: #101010;
+}
+
+h2, h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: black;
+}
+
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: black;
+}
+
+h5 {
+  font-family: "Shrikhand";
+  font-size: 1.125rem;
+  color: white;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  display: inline-block;
+}
+
+header, .location, .catchword, .how-to__steps__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  background-color: #EAEAEA;
+}
+
+header {
+  position: relative;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  height: 63px;
+}
+header i {
+  display: inline-block;
+  z-index: 1;
+  position: absolute;
+  color: #353535;
+  left: 24px;
+}
+
+.location {
+  background-color: #F6F6F6;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #353535;
+  height: 50px;
+}
+.location i {
+  margin-right: 17px;
+}
+
+.catchword {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px;
+}
+.catchword h2 {
+  margin: 0 40px;
+}
+.catchword h2 + p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+  color: #353535;
+  margin: 18px 0;
+}
+.catchword .button {
+  height: 50px;
+  width: 218px;
+  border-radius: 25px;
+  background: linear-gradient(167deg, #FF79DA -11.44%, #9356DC 123.93%);
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  border: none;
+  margin-bottom: 27px;
+}
+
+.how-to {
+  background-color: white;
+  padding: 48px 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.how-to__steps__card {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 72px;
+  position: relative;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: black;
+  position: relative;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  background-color: #EAEAEA;
+  border-radius: 20px;
+  margin-top: 26px;
+  margin-bottom: 20px;
+}
+.how-to__steps__card-nb {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+  background-color: #9356DC;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  left: -10px;
+}
+.how-to__steps__card i {
+  margin-right: 27px;
+}
+
+.restaurants {
+  background-color: #F6F6F6;
+  padding: 54px 18px;
+}
+.restaurants h2 {
+  margin-left: 3px;
+}
+
+.restaurants-choice {
+  display: grid;
+  grid: repeat(4, 1fr)/1;
+  gap: 18px;
+  margin-top: 20px;
+  margin-bottom: 22px;
+}
+
+.restaurant__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.restaurant__card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 60%;
+     object-position: 50% 60%;
+  height: 172px;
+  border-radius: 15px 15px 0 0;
+}
+.restaurant__card .img__menilmontant, .restaurant__card .img__charonne {
+  -o-object-position: 50% 61%;
+     object-position: 50% 61%;
+}
+.restaurant__card .card__content {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 15px 15px;
+  padding: 15px 12px;
+}
+.restaurant__card .card__content p {
+  margin: 5px 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1.0625rem;
+  color: black;
+}
+.restaurant__card .card__content i {
+  margin-right: 13px;
+  color: #101010;
+}
+.restaurant__card .card__content i:active, .restaurant__card .card__content i:hover {
+  color: #9356DC;
+  font-weight: 900;
+}
+
+.related-infos {
+  background-color: #353535;
+  padding: 22px 25px;
+  z-index: 1;
+}
+.related-infos h5 {
+  margin-bottom: 9px;
+}
+.related-infos div {
+  display: flex;
+  flex-direction: column;
+}
+.related-infos__partnership a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+}
+.related-infos__contact a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+}
+.related-infos a {
+  margin-top: 7px;
+}
+.related-infos i {
+  margin-right: 11px;
+}
