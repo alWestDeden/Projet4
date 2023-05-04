@@ -1,0 +1,66 @@
+.how-to__steps__card {
+    object-fit: contain;
+    height: 72px;
+    position: relative;
+    display: flex;
+    @include robot(5,16,$black);
+    @include shadow(4,15,15);
+    @include bg-color($light);
+    border-radius: 20px;
+    margin-top: 26px;
+    margin-bottom: 20px;
+
+    &-nb {
+        position: absolute;
+        @include bg-style(24,24,12);
+        @include bg-color($purple);
+        @include robot(5,14,$white);
+        @include centered;
+        left: -10px;
+    }
+
+    i {
+        margin-right: 27px;
+    }
+}
+
+.restaurant__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    img {
+        object-fit: cover;
+        object-position: 50% 60%;
+        height: 172px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .img__menilmontant, .img__charonne {
+        object-position: 50% 61%;
+    }
+
+    .card__content {
+        @include bg-color($white);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0 0 15px 15px;
+        padding: 15px 12px;
+
+        p {
+            margin: 5px 0;
+            @include robot(3,17,$black);
+        }
+
+        i {
+            margin-right: 13px;
+            color: $darker;
+            &:active, &:hover {
+                    color: $purple;
+                    font-weight: 900;
+                }
+        }
+    }
+}

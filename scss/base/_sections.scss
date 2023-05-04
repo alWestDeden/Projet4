@@ -1,0 +1,104 @@
+header, .location, .catchword, .how-to__steps__card {
+    @include centered;
+}
+
+body {
+    @include bg-color($light);
+}
+
+header {
+    @include shadow(2,4,15);
+    @include bg-color($white);
+    height: 63px;
+    i {
+        display: inline-block;
+        z-index: 1;
+        position: absolute;
+        color: $dark;
+        left: 24px;
+    }
+}
+
+.location {
+    @include bg-color($lighter);
+    @include robot(5,16,$dark);
+    height: 50px;
+
+    i {
+        margin-right: 17px;
+    }
+}
+
+.catchword {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px;
+
+    h2 {
+        margin: 0 40px;
+
+        & + p {
+            @include robot(3,18,$dark);
+            margin: 18px 0;
+        }
+    }
+
+    
+}
+
+.how-to {
+    @include bg-color($white);
+    padding: 48px 20px;
+    object-fit: contain;
+}
+
+
+.restaurants {
+    @include bg-color($lighter);
+    padding: 54px 18px;
+
+    h2 {
+        margin-left: 3px;
+    }
+}
+
+.restaurants-choice {
+    display: grid;
+    grid: repeat(4, 1fr) / 1;
+    gap: 18px;
+    margin-top: 20px;
+    margin-bottom: 22px;
+
+}
+
+.related-infos {
+    @include bg-color($dark);
+    padding: 22px 25px;
+    z-index: 1;
+
+    h5 {
+        margin-bottom: 9px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__partnership a {
+        @include robot(5,16,$white);
+    }
+
+    &__contact a {
+        @include robot(4,16,$white);
+    }
+
+    a {
+        margin-top: 7px;
+    }
+
+    i {
+        margin-right: 11px;
+    }
+}

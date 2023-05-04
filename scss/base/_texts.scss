@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap);
+
+h1 {
+    @include shrik(30,$darker);
+}
+
+h2, h3 {
+    @include robot(7,24,$black);
+}
+
+h4 {
+    @include robot(7,18,$black);
+}
+
+h5 {
+    @include shrik(18,$white);
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    display: inline-block;
+}
