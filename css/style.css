@@ -52,9 +52,9 @@ i {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: none;
   cursor: pointer;
   margin: 0 auto;
-  border: none;
 }
 .button--explore {
   margin-bottom: 27px;
@@ -64,11 +64,10 @@ i {
 }
 
 .how-to__steps__card {
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 300px;
   height: 72px;
-  position: relative;
   display: flex;
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 1rem;
@@ -104,6 +103,8 @@ i {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
 .restaurant__card img {
   -o-object-fit: cover;
@@ -111,7 +112,8 @@ i {
   -o-object-position: 50% 60%;
      object-position: 50% 60%;
   height: 172px;
-  border-radius: 15px 15px 0 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .restaurant__card .img__menilmontant, .restaurant__card .img__charonne {
   -o-object-position: 50% 61%;
@@ -123,7 +125,8 @@ i {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-radius: 0 0 15px 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   padding: 15px 12px;
 }
 .restaurant__card .card__content p {
@@ -172,6 +175,16 @@ i {
   color: black;
   margin: 0;
 }
+.menu__card h4, .menu__card p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .menu__card {
+    min-width: 634px;
+  }
+}
 
 header, .location, .catchword, .how-to__steps__card {
   display: flex;
@@ -189,8 +202,12 @@ body {
 header {
   position: relative;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  background-color: white;
   height: 63px;
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 93px;
+  }
 }
 header i {
   display: inline-block;
@@ -219,9 +236,6 @@ header i {
   padding: 30px;
   background-color: #F6F6F6;
 }
-.catchword h2 {
-  margin: 0 40px;
-}
 .catchword h2 + p {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -231,10 +245,28 @@ header i {
 }
 
 .how-to {
-  background-color: white;
   padding: 48px 20px;
-  -o-object-fit: contain;
-     object-fit: contain;
+}
+@media screen and (min-width: 1080px) {
+  .how-to {
+    width: 1080px;
+    margin: auto;
+  }
+}
+.how-to__steps {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (min-width: 1080px) {
+  .how-to__steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .restaurants {
@@ -244,13 +276,32 @@ header i {
 .restaurants h2 {
   margin-left: 3px;
 }
-
-.restaurants-choice {
+@media screen and (min-width: 768px) {
+  .restaurants__container {
+    max-width: 1080px;
+    margin: auto;
+  }
+}
+.restaurants__choice {
   display: grid;
   grid: repeat(4, 1fr)/1;
   gap: 18px;
   margin-top: 20px;
   margin-bottom: 22px;
+}
+@media screen and (min-width: 768px) {
+  .restaurants__choice {
+    grid: repeat(2, 1fr)/repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .restaurants__choice {
+    grid: repeat(2, 1fr)/repeat(2, 1fr);
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+    row-gap: 50px;
+  }
 }
 
 .related-infos {
@@ -259,10 +310,24 @@ header i {
 }
 .related-infos h5 {
   margin-bottom: 9px;
+  padding-right: 50px;
+}
+@media screen and (min-width: 1080px) {
+  .related-infos h5 {
+    display: inline-block;
+    order: 1;
+    margin-left: 80px;
+  }
 }
 .related-infos div {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 1080px) {
+  .related-infos div {
+    flex-direction: row;
+    margin-right: 17px;
+  }
 }
 .related-infos__partnership a {
   font-family: "Roboto", sans-serif;
@@ -270,17 +335,35 @@ header i {
   font-size: 1rem;
   color: white;
 }
+@media screen and (min-width: 1080px) {
+  .related-infos__partnership a {
+    margin-right: 10px;
+  }
+}
 .related-infos__contact a {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   color: white;
 }
+@media screen and (min-width: 1080px) {
+  .related-infos__contact a {
+    margin-right: 10px;
+  }
+}
 .related-infos a {
   margin-top: 7px;
 }
 .related-infos i {
   margin-right: 11px;
+}
+@media screen and (min-width: 1080px) {
+  .related-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 57px 12px 30px 12px;
+  }
 }
 
 .restaurant-img {
@@ -295,7 +378,7 @@ header i {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
-  top: 63px;
+  top: 93px;
 }
 
 .menu-container {
@@ -303,17 +386,17 @@ header i {
 }
 
 .menu {
-  width: 1055px;
-  margin: auto;
+  max-width: 1055px;
   display: flex;
   flex-direction: column;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  background: #EAEAEA;
-  padding: 40px 12px;
+  margin: auto;
   position: relative;
   top: 235px;
   z-index: 2;
+  background: #EAEAEA;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 40px 12px;
 }
 .menu h2 {
   font-family: "Shrikhand";
@@ -329,19 +412,40 @@ header i {
   font-weight: 300;
   font-size: 1rem;
   color: black;
-  right: 50%;
 }
 .menu--title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .menu--title h1, .menu--title i {
   display: inline-block;
   margin-right: 28px;
 }
+.menu--title h1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu--title i {
+  margin-left: 10px;
+}
+@media screen and (min-width: 768px) {
+  .menu--title {
+    justify-content: center;
+  }
+  .menu--title i {
+    margin-left: 24px;
+  }
+}
 .menu__line {
+  background-color: #99E2D0;
   height: 3px;
   width: 40px;
-  background-color: #99E2D0;
   margin-bottom: 12px;
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    align-items: center;
+  }
 }

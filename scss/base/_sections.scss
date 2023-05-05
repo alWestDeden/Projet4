@@ -3,15 +3,18 @@ header, .location, .catchword, .how-to__steps__card {
 }
 
 body {
-    @include bg-color($white);
+    background-color: $white;
     margin: 0;
     padding: 0;
 }
 
 header {
     @include shadow(2,4,15);
-    @include bg-color($white);
     height: 63px;
+
+    @include tablette {
+        height: 93px;
+    }
 
     // the return arrow in restaurant's page
     i {
@@ -25,7 +28,7 @@ header {
 
 // location section
 .location {
-    @include bg-color($light);
+    background-color: $light;
     @include robot(5,16,$dark);
     height: 50px;
 
@@ -43,8 +46,6 @@ header {
     background-color: $lighter;
 
     h2 {
-        margin: 0 40px;
-
         & + p {
             @include robot(3,18,$dark);
             margin: 18px 0;
@@ -54,51 +55,104 @@ header {
 
 // how to order section
 .how-to {
-    @include bg-color($white);
     padding: 48px 20px;
-    object-fit: contain;
+
+    @include desktop {
+        width: 1080px;
+        margin: auto;
+    }
+
+    &__steps {
+        display: flex;
+        flex-direction: column;
+        @include centered;
+
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }}
 }
 
 // restaurants section in home page
 .restaurants {
-    @include bg-color($lighter);
+    background-color: $lighter;
     padding: 54px 18px;
 
     h2 {
         margin-left: 3px;
     }
+
+    &__container {
+        @include tablette {
+            max-width: 1080px;
+            margin: auto;
+        }
+    }
+
+    &__choice {
+        display: grid;
+        grid: repeat(4, 1fr) / 1;
+        gap: 18px;
+        margin-top: 20px;
+        margin-bottom: 22px;
+    
+        @include tablette {
+            grid: repeat(2, 1fr) / repeat(2, 1fr);
+            gap: 25px;
+        }
+    
+        @include desktop {
+            grid: repeat(2, 1fr) / repeat(2, 1fr);
+            column-gap: 100px;
+            row-gap: 50px;
+        }
+    }
 }
 
 // restaurants layout
-.restaurants-choice {
-    display: grid;
-    grid: repeat(4, 1fr) / 1;
-    gap: 18px;
-    margin-top: 20px;
-    margin-bottom: 22px;
 
-}
 
 // footer
 .related-infos {
-    @include bg-color($dark);
+    background-color: $dark;
     padding: 22px 25px;
 
     h5 {
         margin-bottom: 9px;
+        padding-right: 50px;
+
+        @include desktop {
+            display: inline-block;
+            order: 1;
+            margin-left: 80px;
+        }
     }
 
     div {
         display: flex;
         flex-direction: column;
+
+        @include desktop {
+            flex-direction: row;
+            margin-right: 17px;
+        }
     }
 
     &__partnership a {
         @include robot(5,16,$white);
+
+        @include desktop {
+            margin-right: 10px;
+        }
     }
 
     &__contact a {
         @include robot(4,16,$white);
+
+        @include desktop {
+            margin-right: 10px;
+        }
     }
 
     a {
@@ -108,17 +162,25 @@ header {
     i {
         margin-right: 11px;
     }
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 57px 12px 30px 12px;
+    }
 }
 
 // restaurant's page (position: absolute, top: 63px)
 .restaurant-img {
     @include centered;
+
     img {
         height: 275px;
         width: 100%;
         object-fit: cover;
         position: absolute;
-        top: 63px;
+        top: 93px;
     }
 }
 
@@ -129,17 +191,17 @@ header {
 
 // menu (position: relative, top: 235px)
 .menu {
-    width: 1055px;
-    margin: auto;
+    max-width: 1055px;
     display: flex;
     flex-direction: column;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    background: $light;
-    padding: 40px 12px;
+    margin: auto;
     position: relative;
     top: 235px;
     z-index: 2;
+    background: $light;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding: 40px 12px;
 
     h2 {
         @include shrik(28,$darker);
@@ -151,23 +213,45 @@ header {
         margin-bottom: 9px;
         text-transform: uppercase;
         @include robot(3,16,$black);
-        right: 50%;
     }
 
     &--title {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         h1, i {
             display: inline-block;
             margin-right: 28px;
         }
+
+        h1 {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        i {
+            margin-left: 10px;
+        }
+
+        @include tablette {
+            justify-content: center;
+
+            i {
+                margin-left: 24px;
+            }
+        }
     }
 
     &__line {
+        background-color: $turquoise;
         height: 3px;
         width: 40px;
-        background-color: $turquoise;
         margin-bottom: 12px;
+    }
+
+    @include tablette {
+        align-items: center;  
     }
 }
