@@ -1,3 +1,4 @@
+// card on how to order
 .how-to__steps__card {
     object-fit: contain;
     height: 72px;
@@ -24,6 +25,7 @@
     }
 }
 
+// restaurant's card
 .restaurant__card {
     display: flex;
     flex-direction: column;
@@ -61,6 +63,34 @@
                     color: $purple;
                     font-weight: 900;
                 }
+        }
+    }
+}
+
+// menu's card
+.menu__card {
+    display: flex;
+    flex-direction: column;
+    @include bg-color($white);
+    @include shadow (4,15,10);
+    border-radius: 15px;
+    margin-top: 12px;
+    padding: 12px 15px;
+
+    h4, span {
+        @include robot(5,18,$black);
+        margin-bottom: 5px;
+    }
+
+    &--price {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            @include robot(3,15, $black);
+            margin: 0;
         }
     }
 }

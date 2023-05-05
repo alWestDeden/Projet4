@@ -3,13 +3,17 @@ header, .location, .catchword, .how-to__steps__card {
 }
 
 body {
-    @include bg-color($light);
+    @include bg-color($white);
+    margin: 0;
+    padding: 0;
 }
 
 header {
     @include shadow(2,4,15);
     @include bg-color($white);
     height: 63px;
+
+    // the return arrow in restaurant's page
     i {
         display: inline-block;
         z-index: 1;
@@ -19,8 +23,9 @@ header {
     }
 }
 
+// location section
 .location {
-    @include bg-color($lighter);
+    @include bg-color($light);
     @include robot(5,16,$dark);
     height: 50px;
 
@@ -29,11 +34,13 @@ header {
     }
 }
 
+// catchword section
 .catchword {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 30px;
+    background-color: $lighter;
 
     h2 {
         margin: 0 40px;
@@ -42,18 +49,17 @@ header {
             @include robot(3,18,$dark);
             margin: 18px 0;
         }
-    }
-
-    
+    } 
 }
 
+// how to order section
 .how-to {
     @include bg-color($white);
     padding: 48px 20px;
     object-fit: contain;
 }
 
-
+// restaurants section in home page
 .restaurants {
     @include bg-color($lighter);
     padding: 54px 18px;
@@ -63,6 +69,7 @@ header {
     }
 }
 
+// restaurants layout
 .restaurants-choice {
     display: grid;
     grid: repeat(4, 1fr) / 1;
@@ -72,10 +79,10 @@ header {
 
 }
 
+// footer
 .related-infos {
     @include bg-color($dark);
     padding: 22px 25px;
-    z-index: 1;
 
     h5 {
         margin-bottom: 9px;
@@ -100,5 +107,67 @@ header {
 
     i {
         margin-right: 11px;
+    }
+}
+
+// restaurant's page (position: absolute, top: 63px)
+.restaurant-img {
+    @include centered;
+    img {
+        height: 275px;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 63px;
+    }
+}
+
+// help respect the model's layout regarding .menu position:relative, top:235px
+.menu-container {
+    margin-bottom: 235px;
+}
+
+// menu (position: relative, top: 235px)
+.menu {
+    width: 1055px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background: $light;
+    padding: 40px 12px;
+    position: relative;
+    top: 235px;
+    z-index: 2;
+
+    h2 {
+        @include shrik(28,$darker);
+        line-height: 41px;
+    }
+
+    h3 {
+        margin-top: 40px;
+        margin-bottom: 9px;
+        text-transform: uppercase;
+        @include robot(3,16,$black);
+        right: 50%;
+    }
+
+    &--title {
+        display: flex;
+        justify-content: space-between;
+
+        h1, i {
+            display: inline-block;
+            margin-right: 28px;
+        }
+    }
+
+    &__line {
+        height: 3px;
+        width: 40px;
+        background-color: $turquoise;
+        margin-bottom: 12px;
     }
 }

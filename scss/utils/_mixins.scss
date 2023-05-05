@@ -1,12 +1,14 @@
+// background-color (usefull ?)
 @mixin bg-color($bg-color) {
     background-color: $bg-color;
 }
 
-/***** define the gradient background *****/
+// define the gradient background
 @mixin bg-gradient {
     background: linear-gradient(167deg, #FF79DA -11.44%, #9356DC 123.93%);
 }
 
+// define the font style
 @mixin robot($robot-weight,$robot-size,$txt-color) {
     font-family: 'Roboto', sans-serif;
     font-weight: $robot-weight*100;
@@ -20,20 +22,20 @@
     color: $txt-color;
 }
 
-/***** define the height, width and radius corner of element background *****/
+// define the height, width and radius corner of element background
 @mixin bg-style($bg-height,$bg-width,$bg-radius) {
     height: $bg-height+px;
     width: $bg-width+px;
     border-radius: $bg-radius+px;
 }
 
-/***** define the shadow *****/
+// define the shadow
 @mixin shadow($Y,$B,$OPA) {
     position: relative;
     box-shadow: 0px $Y+px $B+px rgba(0, 0, 0, calc($OPA / 100));
 }
 
-/***** center elements *****/
+// center elements (usefull ?)
 @mixin centered {
     display: flex;
     justify-content: center;
