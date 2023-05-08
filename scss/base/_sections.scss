@@ -198,7 +198,7 @@ header {
     background: $light;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    padding: 40px 12px;
+    padding: 40px 13px;
 
     h2 {
         @include shrik(28,$darker);
@@ -216,10 +216,10 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 3px;
 
         h1, i {
             display: inline-block;
-            margin-right: 28px;
         }
 
         h1 {
@@ -228,16 +228,8 @@ header {
             white-space: nowrap;
         }
 
-        i {
-            margin-left: 10px;
-        }
-
         @include tablette {
             justify-content: center;
-
-            i {
-                margin-left: 24px;
-            }
         }
     }
 

@@ -85,6 +85,7 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 24px;
   cursor: pointer;
 }
 .heart i {
@@ -120,7 +121,7 @@ i {
   animation: heart 400ms 450ms 2 forwards;
 }
 .heart:hover .heart--empty {
-  z-index: 1;
+  z-index: -1;
 }
 .heart:hover .heart--mask {
   scale: 0;
@@ -143,12 +144,10 @@ i {
   margin-bottom: 14px;
   bottom: 0;
 }
-.heart__menu {
-  margin-left: 48px;
-}
 .heart__menu .heart--mask {
   background-color: #EAEAEA;
-  width: 75px;
+  width: 45px;
+  height: 75px;
 }
 
 .how-to__steps__card {
@@ -479,7 +478,7 @@ header i {
   background: #EAEAEA;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  padding: 40px 12px;
+  padding: 40px 13px;
 }
 .menu h2 {
   font-family: "Shrikhand";
@@ -500,25 +499,19 @@ header i {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 3px;
 }
 .menu--title h1, .menu--title i {
   display: inline-block;
-  margin-right: 28px;
 }
 .menu--title h1 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.menu--title i {
-  margin-left: 10px;
-}
 @media screen and (min-width: 768px) {
   .menu--title {
     justify-content: center;
-  }
-  .menu--title i {
-    margin-left: 24px;
   }
 }
 .menu__line {
