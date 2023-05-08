@@ -1,0 +1,82 @@
+.heart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+        font-size: 1.25rem;
+    }
+
+    &--empty{
+        position: absolute;
+        color: black;
+        z-index: 5;
+    }
+
+    &--full{
+        position: absolute;
+        opacity: 0;
+        background: linear-gradient(#FF79DA, #9356DC);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        z-index: 3;
+    }
+
+    &--mask {
+        display: inline-block;
+        position: absolute;
+        height: 40px;
+        width: 50px;
+        background-color: $white;
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: scale 800ms steps(13, jump-start);
+        z-index: 4;
+    }
+
+    &:hover &--full{
+        opacity: 1;
+        animation: heart 400ms 450ms 2 forwards;
+    }
+
+    &:hover &--empty{
+        z-index: 1;
+    }
+
+    &:hover &--mask {
+        scale: 0;
+    }
+
+    @keyframes heart {
+        0%, 100% {
+            scale: 1;
+        }
+        50% {
+            scale: 1.5;
+            animation-timing-function: ease-out;
+        }
+        75% {
+            scale: 1.3;
+            animation-timing-function: ease-out;
+        }
+    }
+
+    &__restaurants {
+        margin-right: 13px;
+        margin-bottom: 14px;
+        bottom: 0;
+
+    }
+
+    &__menu {
+        margin-left: 48px;
+
+        .heart--mask {
+            background-color: $light;
+            width: 75px;
+        }
+    }
+}

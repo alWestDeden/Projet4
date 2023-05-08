@@ -23,6 +23,10 @@
     i {
         margin-right: 27px;
     }
+
+    .fa-user-purple {
+        color: $purple;
+    }
 }
 
 // restaurant's card
@@ -30,7 +34,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    @include shadow(4,15,15);
 
     img {
         object-fit: cover;
@@ -49,23 +52,15 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         padding: 15px 12px;
+        @include shadow(4,15,15);
 
         p {
             margin: 5px 0;
             @include robot(3,17,$black);
-        }
-
-        i {
-            margin-right: 13px;
-            color: $darker;
-            &:active, &:hover {
-                    color: $purple;
-                    font-weight: 900;
-                }
         }
     }
 }

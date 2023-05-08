@@ -12,7 +12,7 @@ header {
     @include shadow(2,4,15);
     height: 63px;
 
-    @include tablette {
+    @include desktop {
         height: 93px;
     }
 
@@ -110,9 +110,6 @@ header {
     }
 }
 
-// restaurants layout
-
-
 // footer
 .related-infos {
     background-color: $dark;
@@ -171,7 +168,7 @@ header {
     }
 }
 
-// restaurant's page (position: absolute, top: 63px)
+// restaurant's page (position: absolute, top: 93px)
 .restaurant-img {
     @include centered;
 
