@@ -238,15 +238,15 @@ i {
 }
 
 .menu__subtitle--1 {
-  animation: menu-subtitle-anime 800ms 800ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+  animation: menu-subtitle-anime 800ms 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
   z-index: 3;
 }
 .menu__subtitle--2 {
-  animation: menu-subtitle-anime 800ms 1600ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+  animation: menu-subtitle-anime 800ms 1200ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
   z-index: 3;
 }
 .menu__subtitle--3 {
-  animation: menu-subtitle-anime 800ms 2400ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+  animation: menu-subtitle-anime 800ms 1800ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
   z-index: 3;
 }
 .menu__card {

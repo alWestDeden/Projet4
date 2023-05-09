@@ -69,7 +69,7 @@
 .menu {
     @for $menu-subtitle-nb from 1 to 4 {
         &__subtitle--#{$menu-subtitle-nb} {
-            animation: menu-subtitle-anime 800ms ($menu-subtitle-nb*800)+ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+            animation: menu-subtitle-anime 800ms ($menu-subtitle-nb*600)+ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
             z-index: 3;
         }
     }
