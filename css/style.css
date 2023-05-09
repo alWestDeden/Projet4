@@ -108,9 +108,9 @@ i {
 .heart--mask {
   display: inline-block;
   position: absolute;
-  height: 40px;
+  max-height: 40px;
   width: 50px;
-  background-color: white;
+  background-color: #EAEAEA;
   transform: scaleY(1);
   transform-origin: top;
   transition: scale 800ms steps(13, jump-start);
