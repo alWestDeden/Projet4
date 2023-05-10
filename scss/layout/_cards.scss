@@ -71,7 +71,6 @@
     @for $menu-subtitle-nb from 1 to 4 {
         &__subtitle--#{$menu-subtitle-nb} {
             animation: menu-subtitle-anime 400ms ($menu-subtitle-nb*500)+ms ease-in-out both;
-            z-index: 2;
         }
     }
 
@@ -80,17 +79,23 @@
         @for $card-nb from 1 to 13 {
             &--#{$card-nb} {
                 animation: menu-card-anime 400ms ($card-nb*200)+ms ease both;
-                z-index: 1;
             }
         }
 
         display: flex;
-        flex-direction: column;
-        background-color: $white;
-        @include shadow (4,15,10);
+        flex-direction: row;
+        position: relative;
         border-radius: 15px;
         margin-top: 12px;
         padding: 12px 15px;
+        @include shadow (4,15,10);
+        background-color: $white;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
     
         h4, span {
             @include robot(5,18,$black);
@@ -114,9 +119,50 @@
             overflow: hidden;
             white-space: nowrap;
         }
+
+        &__selected {
+            width: 59px;
+            height: 100%;
+            background-color: $turquoise;
+            font-size: 1.25rem;
+            color: $white;
+            @include centered;
+            position: absolute;
+            right: -1px;
+            top: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transform: scaleX(0);
+        }
+
+        &:hover {
+            .menu__card__selected {
+                animation: selected 250ms ease-in both;
+                i {
+                    transform: rotate(1turn);
+                    transition: all 750ms;
+                }
+            }
+        }
     
         @include tablette {
             min-width: 634px;
         }
+    }
+}
+
+@keyframes selected {
+    0% {
+        transform-origin: right;
+    }
+
+    25% {
+        opacity: .5;
+        transform-origin: right;
+    }
+
+    100% {
+        transform: scaleX(1);
+        transform-origin: right;
     }
 }
