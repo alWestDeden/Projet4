@@ -1,0 +1,23 @@
+//  emergence of menu part's titles
+@keyframes menu-subtitle-anime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// emergence of menu's elements
+@keyframes menu-card-anime {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px) scaleY(.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
