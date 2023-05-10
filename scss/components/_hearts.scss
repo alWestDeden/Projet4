@@ -61,21 +61,7 @@
         
         &--full {
             opacity: 1;
-            animation: heart--anime 400ms 700ms 2 forwards;
-        }
-    }
-
-    @keyframes heart--anime {
-        0%, 100% {
-            scale: 1;
-        }
-        50% {
-            scale: 1.5;
-            animation-timing-function: ease-out;
-        }
-        75% {
-            scale: 1.3;
-            animation-timing-function: ease-out;
+            animation: heart--anime $heart-anime-duration $heart-anime-delay $heartbeats forwards;
         }
     }
 

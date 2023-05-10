@@ -13,3 +13,13 @@ $txt-color: $white or $dark or $darker or $black or $purple;
 
 // breakpoints
 $breakpoints: (tablette: 768px, desktop: 1080px);
+
+// animations durations
+$mn-emergence-duration: 400ms;
+$mn-emergence-delay: 200;
+$mn-sub-emergence-duration: 400ms;
+$mn-sub-emergence-delay: 500;
+$mn-selected: 250ms;
+$heart-anime-duration: 400ms;
+$heart-anime-delay: 700ms;
+$heartbeats: 2;
