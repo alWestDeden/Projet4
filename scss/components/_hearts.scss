@@ -46,7 +46,7 @@
         width: 25px;
         background-color: $white;
         transform-origin: top;
-        transition: all 800ms steps(13, jump-start);
+        transition: all 800ms ease-in-out;
         z-index: 4;
     }
 
@@ -68,7 +68,8 @@
         // the full heart with gradient colors. animation for the heartbeats
         &--full {
             opacity: 1;
-            animation: heart--anime $heart-anime-duration $heart-anime-delay $heartbeats forwards;
+            -webkit-animation: heart--anime $heart-anime-duration $heart-anime-delay $heartbeats forwards;
+                    animation: heart--anime $heart-anime-duration $heart-anime-delay $heartbeats forwards;
         }
     }
 

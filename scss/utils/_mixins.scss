@@ -1,15 +1,14 @@
-// define the font style
-@mixin robot($robot-weight,$robot-size,$txt-color) {
-    font-family: 'Roboto', sans-serif;
-    font-weight: $robot-weight*100;
-    font-size: calc($robot-size / 16)+rem;
-    color: $txt-color;
+//breakpoint
+@mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
 }
 
-@mixin shrik($shrik-size,$txt-color) {
-    font-family: 'Shrikhand';
-    font-size: calc($shrik-size / 16)+rem;
-    color: $txt-color;
+@mixin tablette {
+    @media screen and (min-width: map-get($breakpoints, tablette)) {
+        @content;
+    }
 }
 
 // define the height, width and radius corner of element background
@@ -63,15 +62,16 @@
     text-align: center;
 }
 
-//breakpoint
-@mixin desktop {
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-        @content;
-    }
+// define the font style
+@mixin robot($robot-weight,$robot-size,$txt-color) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: $robot-weight*100;
+    font-size: calc($robot-size / 16)+rem;
+    color: $txt-color;
 }
 
-@mixin tablette {
-    @media screen and (min-width: map-get($breakpoints, tablette)) {
-        @content;
-    }
+@mixin shrik($shrik-size,$txt-color) {
+    font-family: 'Shrikhand';
+    font-size: calc($shrik-size / 16)+rem;
+    color: $txt-color;
 }

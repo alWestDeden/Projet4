@@ -10,7 +10,9 @@
     left: 0;
     @include centered;
 
-    animation: loading $loading-time both;
+    -webkit-animation: loading $loading-time both;
+
+            animation: loading $loading-time both;
 
     &__container {
         position: absolute;
@@ -31,19 +33,22 @@
     &__letters--1 {
         font-size: 42px;
         margin-right: -8px;
-        animation: fade-down $loader-anime-speed 600ms backwards ease infinite;
+        -webkit-animation: fade-down $loader-anime-speed 600ms backwards ease infinite;
+                animation: fade-down $loader-anime-speed 600ms backwards ease infinite;
     }
     
     // emergence of "my" from the bottom
     &__letters--2 {
         font-size: 18px;
         margin-right: -4px;
-        animation: fade-up $loader-anime-speed 600ms backwards ease-in-out infinite;
+        -webkit-animation: fade-up $loader-anime-speed 600ms backwards ease-in-out infinite;
+                animation: fade-up $loader-anime-speed 600ms backwards ease-in-out infinite;
     }
     
     // zoom-in "food"
     &__letters--3 {
         font-size: 96px;
-        animation: magnify $loader-anime-speed 200ms ease-in backwards infinite;
+        -webkit-animation: magnify $loader-anime-speed 200ms ease-in backwards infinite;
+                animation: magnify $loader-anime-speed 200ms ease-in backwards infinite;
     }
 }

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohmyfood</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/style.css" />
+      referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css/style.css">
   </head>
 
   <body>
@@ -26,26 +26,34 @@
 
     <main>
       <div class="restaurant-img">
-        <img src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant Le délice des sens" />
+        <img src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Restaurant Le délice des sens">
       </div>
       
+      <!-- container to correct the page layout issued by the menu being above the picture -->
       <section class="menu-container">
         <div class="menu">
           
           <div class="menu--title">
             <h2>Le délice des sens</h2>
+            <!-- heart's animation -->
             <div class="heart heart__menu">
-              <span class="heart--mask"> </span>
+              <!-- heart's mask -->
+              <span class="heart--mask"></span>
+              <!-- heart unselected -->
               <i class="fa-regular fa-heart fa-1x heart--empty"></i>
+              <!-- heart selected's shape -->
               <i class="fa-regular fa-heart fa-1x heart--empty--grad"></i>
+              <!-- heart selected -->
               <i class="fa-solid fa-heart fa-1x heart--full"></i>
             </div>
           </div>
 
+          <!-- class menu__subtitle-(number) for subtitle's emergence delay -->
           <article class="menu__starters">
             <h3 class="menu__subtitle--1">Entrées</h3>
             <div class="menu__line"></div>
 
+            <!-- class menu__card-(number) for menu's emergence delay -->
             <div class="menu__card menu__card--1">
               <div class="menu__card__content">
                 <h4>Tartare de thon</h4>
@@ -175,7 +183,7 @@
 
           </article>
 
-          <button class="button button--order"> Commander </button>
+          <div class="button button--order">Commander</div>
 
         </div>
       </section>

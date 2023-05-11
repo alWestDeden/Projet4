@@ -1,3 +1,19 @@
+// breakpoints
+$breakpoints: (tablette: 768px, desktop: 1080px);
+
+// loader animation parameters
+$loading-time: 6750ms;
+$loader-anime-speed: 2250ms;
+
+// menu emergence parameters
+$mn-emergence-duration: 400ms;
+$mn-emergence-delay: 200ms;
+
+$mn-sub-emergence-duration: 400ms;
+$mn-sub-emergence-delay: 500;
+
+$mn-selected: 250ms;
+
 // define the various colors
 $white: white;
 $lighter: #F6F6F6;
@@ -14,22 +30,6 @@ $txt-color: $white or $dark or $darker or $black or $purple;
 //define the new's indicator background and font colors
 $new-color: #008766;
 $new-background: #99E2D0;
-
-// breakpoints
-$breakpoints: (tablette: 768px, desktop: 1080px);
-
-// loader animation parameters
-$loading-time: 6750ms;
-$loader-anime-speed: 2250ms;
-
-// menu emergence parameters
-$mn-emergence-duration: 400ms;
-$mn-emergence-delay: 200ms;
-
-$mn-sub-emergence-duration: 400ms;
-$mn-sub-emergence-delay: 500;
-
-$mn-selected: 250ms;
 
 // heart animations parameters
 $heart-anime-duration: 400ms;

@@ -37,15 +37,18 @@
     width: 100%;
 
     img {
-        object-fit: cover;
-        object-position: 50% 60%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: 50% 60%;
+           object-position: 50% 60%;
         height: 172px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
     }
 
     .img__menilmontant, .img__charonne {
-        object-position: 50% 61%;
+        -o-object-position: 50% 61%;
+           object-position: 50% 61%;
     }
 
     // indicate newly added
@@ -83,7 +86,8 @@
     // emergence of menu part's titles
     @for $mn-subtitle-nb from 1 to 4 {
         &__subtitle--#{$mn-subtitle-nb} {
-            animation: menu-subtitle-anime $mn-sub-emergence-duration ($mn-subtitle-nb*$mn-sub-emergence-delay)+ms ease-in-out both;
+            -webkit-animation: menu-subtitle-anime $mn-sub-emergence-duration ($mn-subtitle-nb*$mn-sub-emergence-delay)+ms ease-in-out both;
+                    animation: menu-subtitle-anime $mn-sub-emergence-duration ($mn-subtitle-nb*$mn-sub-emergence-delay)+ms ease-in-out both;
         }
     }
 
@@ -91,7 +95,8 @@
     &__card {
         @for $card-nb from 1 to 13 {
             &--#{$card-nb} {
-                animation: menu-card-anime $mn-emergence-duration ($card-nb*$mn-emergence-delay) ease both;
+                -webkit-animation: menu-card-anime $mn-emergence-duration ($card-nb*$mn-emergence-delay) ease both;
+                        animation: menu-card-anime $mn-emergence-duration ($card-nb*$mn-emergence-delay) ease both;
             }
         }
 
@@ -153,7 +158,8 @@
         &:hover {
             .menu__card__selected {
                 // show the selection's tab
-                animation: selected $mn-selected ease-in both;
+                -webkit-animation: selected $mn-selected ease-in both;
+                        animation: selected $mn-selected ease-in both;
                 // make the selected icon turn
                 i {
                     transform: rotate(1turn);
