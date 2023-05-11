@@ -11,7 +11,7 @@
     margin-top: 26px;
     margin-bottom: 20px;
 
-    &-nb {
+    &--nb {
         position: absolute;
         @include bg-style(24,24,12);
         background-color: $purple;
@@ -33,6 +33,7 @@
 .restaurant__card {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
 
     img {
@@ -47,7 +48,19 @@
         object-position: 50% 61%;
     }
 
-    .card__content {
+    // indicate newly added
+    &__new {
+        position: absolute;
+        height: 29px;
+        width: 80px;
+        background-color: $new-background;
+        @include centered;
+        @include robot(5,14,$new-color);
+        right: 0;
+        margin: 15px;
+    }
+
+    &__content {
         background-color: $white;
         display: flex;
         flex-direction: row;
@@ -68,9 +81,9 @@
 // menu's card
 .menu {
     // emergence of menu part's titles
-    @for $menu-subtitle-nb from 1 to 4 {
-        &__subtitle--#{$menu-subtitle-nb} {
-            animation: menu-subtitle-anime $mn-sub-emergence-duration ($menu-subtitle-nb*$mn-sub-emergence-delay)+ms ease-in-out both;
+    @for $mn-subtitle-nb from 1 to 4 {
+        &__subtitle--#{$mn-subtitle-nb} {
+            animation: menu-subtitle-anime $mn-sub-emergence-duration ($mn-subtitle-nb*$mn-sub-emergence-delay)+ms ease-in-out both;
         }
     }
 
@@ -78,18 +91,18 @@
     &__card {
         @for $card-nb from 1 to 13 {
             &--#{$card-nb} {
-                animation: menu-card-anime $mn-emergence-duration ($card-nb*$mn-emergence-delay)+ms ease both;
+                animation: menu-card-anime $mn-emergence-duration ($card-nb*$mn-emergence-delay) ease both;
             }
         }
 
         display: flex;
         flex-direction: row;
         position: relative;
+        background-color: $white;
         border-radius: 15px;
         margin-top: 12px;
         padding: 12px 15px;
         @include shadow (4,15,10);
-        background-color: $white;
 
         &__content {
             display: flex;
@@ -121,23 +134,27 @@
         }
 
         &__selected {
+            position: absolute;
+            @include centered;
             width: 59px;
             height: 100%;
             background-color: $turquoise;
-            font-size: 1.25rem;
-            color: $white;
-            @include centered;
-            position: absolute;
-            right: -1px;
-            top: 0;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
+            color: $white;
+            font-size: 1.25rem;
+            // right: -1 otherwise a tiny piece of white background is seen
+            right: -1px;
+            top: 0;
+
             transform: scaleX(0);
         }
 
         &:hover {
             .menu__card__selected {
+                // show the selection's tab
                 animation: selected $mn-selected ease-in both;
+                // make the selected icon turn
                 i {
                     transform: rotate(1turn);
                     transition: all 750ms;

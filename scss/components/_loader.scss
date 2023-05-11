@@ -1,3 +1,4 @@
+// loader 
 .loader {
     position: fixed;
     width: 100%;
@@ -8,70 +9,41 @@
     bottom: 0;
     left: 0;
     @include centered;
-    animation: loading 2s both;
+
+    animation: loading $loading-time both;
 
     &__container {
         position: absolute;
-        z-index: 99;
-        margin: auto;
-        background-color: $dark;
+        background-color: $purple;
         border-radius: 10px;
         width: 80%;
         height: 90%;
         @include centered;
-
-        &--anime, &--anime:before, &--anime:after {
-            border-radius: 50%;
-            width: 2.5em;
-            height: 2.5em;
-            animation-fill-mode: both;
-            animation: bblFadInOut 1.8s infinite ease-in-out;
-        }
+        // overflow: hidden for the outside animated text
+        overflow: hidden;
 
         &--anime {
-            color: $lighter;
-            font-size: 7px;
-            position: relative;
-            text-indent: -9999em;
-            transform: translateZ(0);
-            animation-delay: -0.16s;
+            @include shrik(48,$lighter);
         }
-    
-        &--anime:before, &--anime:after {
-            content: '';
-            position: absolute;
-            top: 0;
-        }
+    }
 
-        &--anime:before {
-            left: -3.5em;
-            animation-delay: -0.32s;
-        }
+    // mergence of "oh" from the top
+    &__letters--1 {
+        font-size: 42px;
+        margin-right: -8px;
+        animation: fade-down $loader-anime-speed 600ms backwards ease infinite;
+    }
     
-        &--anime:after {
-            left: 3.5em;
-        }
+    // emergence of "my" from the bottom
+    &__letters--2 {
+        font-size: 18px;
+        margin-right: -4px;
+        animation: fade-up $loader-anime-speed 600ms backwards ease-in-out infinite;
+    }
+    
+    // zoom-in "food"
+    &__letters--3 {
+        font-size: 96px;
+        animation: magnify $loader-anime-speed 200ms ease-in backwards infinite;
     }
 }
-
-@keyframes loading {
-    0% {
-        z-index: 10;
-    }
-
-    96% {
-        opacity: 1;
-        z-index: 10;
-    }
-
-    100% {
-        opacity: 0;
-        z-index: -10;
-    }
-}
-  
-  @keyframes bblFadInOut {
-    0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
-    40% { box-shadow: 0 2.5em 0 0 }
-  }
-      

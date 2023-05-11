@@ -33,10 +33,63 @@ a {
   text-decoration: none;
 }
 
-i {
+i, span {
   display: inline-block;
 }
 
+@keyframes loading {
+  0% {
+    z-index: 99;
+  }
+  99% {
+    opacity: 1;
+    z-index: 99;
+  }
+  100% {
+    opacity: 0;
+    z-index: -99;
+  }
+}
+@keyframes fade-down {
+  0% {
+    transform: translateY(-400px);
+    opacity: 0;
+  }
+  19% {
+    opacity: 0.2;
+  }
+  20%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-up {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  29% {
+    opacity: 0.2;
+  }
+  30%, 100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+@keyframes magnify {
+  0% {
+    transform: scale(8);
+    opacity: 0;
+  }
+  48%, 55% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  56% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 @keyframes menu-subtitle-anime {
   0% {
     opacity: 0;
@@ -94,13 +147,11 @@ i {
   justify-content: center;
   align-items: center;
   text-align: center;
-  animation: loading 2s both;
+  animation: loading 6750ms both;
 }
 .loader__container {
   position: absolute;
-  z-index: 99;
-  margin: auto;
-  background-color: #353535;
+  background-color: #9356DC;
   border-radius: 10px;
   width: 80%;
   height: 90%;
@@ -108,56 +159,28 @@ i {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-.loader__container--anime, .loader__container--anime:before, .loader__container--anime:after {
-  border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
-  animation-fill-mode: both;
-  animation: bblFadInOut 1.8s infinite ease-in-out;
+  overflow: hidden;
 }
 .loader__container--anime {
+  font-family: "Shrikhand";
+  font-size: 3rem;
   color: #F6F6F6;
-  font-size: 7px;
-  position: relative;
-  text-indent: -9999em;
-  transform: translateZ(0);
-  animation-delay: -0.16s;
 }
-.loader__container--anime:before, .loader__container--anime:after {
-  content: "";
-  position: absolute;
-  top: 0;
+.loader__letters--1 {
+  font-size: 42px;
+  margin-right: -8px;
+  animation: fade-down 2250ms 600ms backwards ease infinite;
 }
-.loader__container--anime:before {
-  left: -3.5em;
-  animation-delay: -0.32s;
+.loader__letters--2 {
+  font-size: 18px;
+  margin-right: -4px;
+  animation: fade-up 2250ms 600ms backwards ease-in-out infinite;
 }
-.loader__container--anime:after {
-  left: 3.5em;
+.loader__letters--3 {
+  font-size: 96px;
+  animation: magnify 2250ms 200ms ease-in backwards infinite;
 }
 
-@keyframes loading {
-  0% {
-    z-index: 10;
-  }
-  96% {
-    opacity: 1;
-    z-index: 10;
-  }
-  100% {
-    opacity: 0;
-    z-index: -10;
-  }
-}
-@keyframes bblFadInOut {
-  0%, 80%, 100% {
-    box-shadow: 0 2.5em 0 -1.3em;
-  }
-  40% {
-    box-shadow: 0 2.5em 0 0;
-  }
-}
 .button {
   height: 50px;
   width: 218px;
@@ -284,7 +307,7 @@ i {
   margin-top: 26px;
   margin-bottom: 20px;
 }
-.how-to__steps__card-nb {
+.how-to__steps__card--nb {
   position: absolute;
   height: 24px;
   width: 24px;
@@ -310,6 +333,7 @@ i {
 .restaurant__card {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
 }
 .restaurant__card img {
@@ -325,7 +349,23 @@ i {
   -o-object-position: 50% 61%;
      object-position: 50% 61%;
 }
-.restaurant__card .card__content {
+.restaurant__card__new {
+  position: absolute;
+  height: 29px;
+  width: 80px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #008766;
+  right: 0;
+  margin: 15px;
+}
+.restaurant__card__content {
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -337,7 +377,7 @@ i {
   position: relative;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
-.restaurant__card .card__content p {
+.restaurant__card__content p {
   margin: 5px 0;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -358,12 +398,12 @@ i {
   display: flex;
   flex-direction: row;
   position: relative;
+  background-color: white;
   border-radius: 15px;
   margin-top: 12px;
   padding: 12px 15px;
   position: relative;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: white;
 }
 .menu__card--1 {
   animation: menu-card-anime 400ms 200ms ease both;
@@ -432,20 +472,20 @@ i {
   white-space: nowrap;
 }
 .menu__card__selected {
-  width: 59px;
-  height: 100%;
-  background-color: #99E2D0;
-  font-size: 1.25rem;
-  color: white;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: absolute;
-  right: -1px;
-  top: 0;
+  width: 59px;
+  height: 100%;
+  background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  color: white;
+  font-size: 1.25rem;
+  right: -1px;
+  top: 0;
   transform: scaleX(0);
 }
 .menu__card:hover .menu__card__selected {
@@ -479,7 +519,7 @@ header {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   height: 63px;
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 768px) {
   header {
     height: 93px;
   }

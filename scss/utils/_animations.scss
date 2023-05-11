@@ -1,3 +1,72 @@
+// loader duration
+@keyframes loading {
+    0% {
+        z-index: 99;
+    }
+
+    99% {
+        opacity: 1;
+        z-index: 99;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -99;
+    }
+}
+
+// loader emergence of letters "oh" from top
+@keyframes fade-down {
+    0% {
+        transform: translateY(-400px);
+        opacity: 0;
+    }
+
+    19% {
+        opacity: .2;
+    }
+
+    20%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// loader emergence of letters "my" from bottom
+@keyframes fade-up {
+    0% {
+        transform: translateY(400px);
+        opacity: 0;
+    }
+
+    29% {
+        opacity: .2;
+    }
+
+    30%, 100% {
+        transform: translateY(0);
+        opacity: .9;
+    }
+}
+
+// loader zoom-in letters "food"
+@keyframes magnify {
+    0% {
+        transform: scale(8);
+        opacity: 0;
+    }
+
+    48%, 55% {
+        transform: scale(1);
+        opacity: .7;
+    }
+
+    56% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 //  emergence of menu part's titles
 @keyframes menu-subtitle-anime {
     0% {

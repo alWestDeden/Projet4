@@ -11,15 +11,27 @@ $turquoise: #99E2D0;
 // define the font color
 $txt-color: $white or $dark or $darker or $black or $purple;
 
+//define the new's indicator background and font colors
+$new-color: #008766;
+$new-background: #99E2D0;
+
 // breakpoints
 $breakpoints: (tablette: 768px, desktop: 1080px);
 
-// animations durations
+// loader animation parameters
+$loading-time: 6750ms;
+$loader-anime-speed: 2250ms;
+
+// menu emergence parameters
 $mn-emergence-duration: 400ms;
-$mn-emergence-delay: 200;
+$mn-emergence-delay: 200ms;
+
 $mn-sub-emergence-duration: 400ms;
 $mn-sub-emergence-delay: 500;
+
 $mn-selected: 250ms;
+
+// heart animations parameters
 $heart-anime-duration: 400ms;
 $heart-anime-delay: 700ms;
 $heartbeats: 2;

@@ -1,6 +1,6 @@
 .button {
     @include bg-style(50,218,25);
-    @include btt-gradient-anima;
+    @include btt-gradient-anime;
     @include shadow(4,10,25);
     @include robot(5,16,$white);
     @include centered;

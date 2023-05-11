@@ -12,7 +12,7 @@ header {
     @include shadow(2,4,15);
     height: 63px;
 
-    @include desktop {
+    @include tablette {
         height: 93px;
     }
 
