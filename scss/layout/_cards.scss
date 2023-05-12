@@ -192,36 +192,6 @@
                 }
             }
         }
-
-        @include no-hover {
-            &:active {
-                .menu__card {
-                    &__selected--anime {
-                        // show the selection's tab
-                        -webkit-animation: selected $mn-selected ease-in both;
-                        animation: selected $mn-selected ease-in both;
-                    
-                        // make the selected icon turn
-                        i {
-                            transform: rotate(1turn);
-                            transition: all 750ms;
-                        }
-                    }
-    
-                    &__selected span {
-                        // the price move while the selected's tab emerge
-                        transform: translateX(-60px);
-                        transition: all $mn-selected ease-in;
-                        // help keep card's layout 
-                        width: 35%
-                    }
-    
-                    &__content {
-                        width: 65%;
-                    }
-                }
-            }
-        }
     
         @include tablette {
             min-width: 634px;

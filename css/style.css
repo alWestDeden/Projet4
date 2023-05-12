@@ -264,21 +264,6 @@ i, span {
   opacity: 1;
   animation: heart--anime 400ms 700ms 2 forwards;
 }
-@media all and (hover: hover) {
-  .heart:active .heart--empty {
-    z-index: -1;
-  }
-  .heart:active .heart--empty--grad {
-    z-index: 5;
-  }
-  .heart:active .heart--mask {
-    transform: scaleY(0);
-  }
-  .heart:active .heart--full {
-    opacity: 1;
-    animation: heart--anime 400ms 700ms 2 forwards;
-  }
-}
 .heart__restaurants {
   margin-right: 13px;
   margin-bottom: 14px;
@@ -508,23 +493,6 @@ i, span {
 }
 .menu__card:hover .menu__card__content {
   width: 65%;
-}
-@media all and (hover: hover) {
-  .menu__card:active .menu__card__selected--anime {
-    animation: selected 250ms ease-in both;
-  }
-  .menu__card:active .menu__card__selected--anime i {
-    transform: rotate(1turn);
-    transition: all 750ms;
-  }
-  .menu__card:active .menu__card__selected span {
-    transform: translateX(-60px);
-    transition: all 250ms ease-in;
-    width: 35%;
-  }
-  .menu__card:active .menu__card__content {
-    width: 65%;
-  }
 }
 @media screen and (min-width: 768px) {
   .menu__card {

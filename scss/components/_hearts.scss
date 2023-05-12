@@ -73,31 +73,6 @@
         }
     }
 
-    @include no-hover {
-        &:active .heart {
-            // hide the unselected heart
-            &--empty {
-                z-index: -1;
-            }
-            // show the heart's shape with gradient colors
-            &--empty--grad {
-                z-index: 5;
-            }
-            
-            // the mask gradually show the full heart with gradient colors
-            &--mask {
-                transform: scaleY(0);
-            }
-            
-            // the full heart with gradient colors. animation for the heartbeats
-            &--full {
-                opacity: 1;
-                -webkit-animation: heart--anime $heart-anime-duration $heart-anime-delay $heartbeats forwards;
-                        animation: heart--anime $heart-anime-duration $heart-anime-delay $heartbeats forwards;
-            }
-        }
-    }
-
     &__restaurants {
         margin-right: 13px;
         margin-bottom: 14px;

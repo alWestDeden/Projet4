@@ -11,12 +11,6 @@
     }
 }
 
-@mixin no-hover {
-    @media all and (hover: hover) {
-        @content;
-    }
-}
-
 // define the height, width and radius corner of element background
 @mixin bg-style($bg-height,$bg-width,$bg-radius) {
     height: $bg-height+px;
