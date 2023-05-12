@@ -9,8 +9,7 @@
     bottom: 0;
     left: 0;
     @include shrik(48,$lighter);
-    @include centered;anime {
-    }
+    @include centered;
 
     -webkit-animation: loading $loading-time both;
 
