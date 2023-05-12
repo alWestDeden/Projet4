@@ -3,31 +3,18 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: $purple;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    @include centered;
+    @include shrik(48,$lighter);
+    @include centered;anime {
+    }
 
     -webkit-animation: loading $loading-time both;
 
             animation: loading $loading-time both;
-
-    &__container {
-        position: absolute;
-        background-color: $purple;
-        border-radius: 10px;
-        width: 80%;
-        height: 90%;
-        @include centered;
-        // overflow: hidden for the outside animated text
-        overflow: hidden;
-
-        &--anime {
-            @include shrik(48,$lighter);
-        }
-    }
 
     // mergence of "oh" from the top
     &__letters--1 {

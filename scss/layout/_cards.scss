@@ -102,7 +102,7 @@
 
         display: flex;
         flex-direction: row;
-        position: relative;
+        justify-content: space-between;
         background-color: $white;
         border-radius: 15px;
         margin-top: 12px;
@@ -110,60 +110,115 @@
         @include shadow (4,15,10);
 
         &__content {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
+            // width: 80% limits meal's names while the card is unselected
+            width: 80%;
+
+            transform: scaleX(1);
+            transform-origin: left;
     
-        h4, span {
-            @include robot(5,18,$black);
-            margin-bottom: 5px;
-        }
-    
-        &--price {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-    
+            h4 {
+                @include robot(5,18,$black);
+            }
+        
             p {
                 @include robot(3,15, $black);
                 margin: 0;
             }
+
+            h4, p {
+                // when meal's names width (80% or 65%) is reached it had dots at the end and keepall in one line
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     
-        h4, p {
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
         &__selected {
-            position: absolute;
-            @include centered;
-            width: 59px;
-            height: 100%;
-            background-color: $turquoise;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            color: $white;
-            font-size: 1.25rem;
-            // right: -1 otherwise a tiny piece of white background is seen
-            right: -1px;
-            top: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: flex-end;
+            width: 60px;
 
-            transform: scaleX(0);
+            span {
+                @include robot(5,18,$black);
+
+                transform: translateX(0);
+            }
+        
+            &--anime {
+                position: absolute;
+                @include centered;
+                width: 59px;
+                height: 100%;
+                background-color: $turquoise;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                color: $white;
+                font-size: 1.25rem;
+                // right: -1 otherwise a tiny piece of white background is seen when 
+                right: -1px;
+                top: 0;
+
+                transform: scaleX(0);
+            }
         }
 
         &:hover {
-            .menu__card__selected {
-                // show the selection's tab
-                -webkit-animation: selected $mn-selected ease-in both;
+            .menu__card {
+                &__selected--anime {
+                    // show the selected's tab
+                    -webkit-animation: selected $mn-selected ease-in both;
+                    animation: selected $mn-selected ease-in both;
+                
+                    // make the selected icon turn
+                    i {
+                        transform: rotate(1turn);
+                        transition: all 750ms;
+                    }
+                }
+
+                &__selected span {
+                    // the price move while the selected's tab emerge
+                    transform: translateX(-60px);
+                    transition: all $mn-selected ease-in;
+                    // help keep card's layout 
+                    width: 35%;
+                }
+
+                &__content {
+                    // width: 65% reduce meal's names width when the card is selected
+                    width: 65%;
+                }
+            }
+        }
+
+        @include no-hover {
+            &:active {
+                .menu__card {
+                    &__selected--anime {
+                        // show the selection's tab
+                        -webkit-animation: selected $mn-selected ease-in both;
                         animation: selected $mn-selected ease-in both;
-                // make the selected icon turn
-                i {
-                    transform: rotate(1turn);
-                    transition: all 750ms;
+                    
+                        // make the selected icon turn
+                        i {
+                            transform: rotate(1turn);
+                            transition: all 750ms;
+                        }
+                    }
+    
+                    &__selected span {
+                        // the price move while the selected's tab emerge
+                        transform: translateX(-60px);
+                        transition: all $mn-selected ease-in;
+                        // help keep card's layout 
+                        width: 35%
+                    }
+    
+                    &__content {
+                        width: 65%;
+                    }
                 }
             }
         }
