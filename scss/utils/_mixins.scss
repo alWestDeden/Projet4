@@ -12,7 +12,7 @@
 }
 
 @mixin no-hover {
-    @media (hover: none) {
+    @media all and (hover: none) {
         @content;
     }
 }
