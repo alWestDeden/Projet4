@@ -264,7 +264,7 @@ i, span {
   opacity: 1;
   animation: heart--anime 400ms 700ms 2 forwards;
 }
-@media all and (hover: none) {
+@media all and (hover: hover) {
   .heart:active .heart--empty {
     z-index: -1;
   }
@@ -509,7 +509,7 @@ i, span {
 .menu__card:hover .menu__card__content {
   width: 65%;
 }
-@media all and (hover: none) {
+@media all and (hover: hover) {
   .menu__card:active .menu__card__selected--anime {
     animation: selected 250ms ease-in both;
   }
