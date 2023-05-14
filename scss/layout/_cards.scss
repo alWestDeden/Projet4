@@ -10,6 +10,27 @@
     border-radius: 20px;
     margin-top: 26px;
     margin-bottom: 20px;
+    z-index: 1;
+
+    &::before {
+        background-color: rgba(187, 86, 220, 0.1);
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left:0;
+        opacity: 0;
+        transition: opacity 250ms;
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
 
     &--nb {
         position: absolute;
@@ -183,12 +204,12 @@
                     transform: translateX(-60px);
                     transition: all $mn-selected ease-in;
                     // help keep card's layout 
-                    width: 35%;
+                    width: 31%;
                 }
 
                 &__content {
                     // width: 65% reduce meal's names width when the card is selected
-                    width: 65%;
+                    width: 69%;
                 }
             }
         }

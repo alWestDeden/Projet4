@@ -290,6 +290,23 @@ i, span {
   border-radius: 20px;
   margin-top: 26px;
   margin-bottom: 20px;
+  z-index: 1;
+}
+.how-to__steps__card::before {
+  background-color: rgba(187, 86, 220, 0.1);
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 250ms;
+  border-radius: 20px;
+  z-index: -1;
+}
+.how-to__steps__card:hover::before {
+  opacity: 1;
 }
 .how-to__steps__card--nb {
   position: absolute;
@@ -489,10 +506,10 @@ i, span {
 .menu__card:hover .menu__card__selected span {
   transform: translateX(-60px);
   transition: all 250ms ease-in;
-  width: 35%;
+  width: 31%;
 }
 .menu__card:hover .menu__card__content {
-  width: 65%;
+  width: 69%;
 }
 @media screen and (min-width: 768px) {
   .menu__card {
