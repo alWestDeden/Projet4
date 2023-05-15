@@ -18,16 +18,19 @@
     border-radius: $bg-radius+px;
 }
 
-// define the gradient background
+// define the background's light color
 @mixin bg-gradient {
     background: $light;
 }
 
+
+// define the background's gradient colors
 @mixin btt-gradient-anime {
     background: linear-gradient(167deg, #FF79DA -11.44%, #9356DC 123.93%);
     position: relative;
     z-index: 1;
 
+    // create a partial mask (rgba where alpha = 0.15) hidden (opacity: 0) when mouse ain't hover
     &::before {
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
         content: "";
@@ -41,6 +44,7 @@
         z-index: -1;
     }
 
+    // apply (opacity: 1) the partial mask for an hover effect
     &:hover {
         &::before {
             opacity: 1;

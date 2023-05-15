@@ -12,6 +12,7 @@
     margin-bottom: 20px;
     z-index: 1;
 
+    // create a partial mask (rgba where alpha = 0.1) hidden (opacity: 0) when mouse ain't hover
     &::before {
         background-color: rgba(187, 86, 220, 0.1);
         content: "";
@@ -26,6 +27,7 @@
         z-index: -1;
     }
 
+    // apply (opacity: 1) the partial mask for an hover effect
     &:hover {
         &::before {
             opacity: 1;
