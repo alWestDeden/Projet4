@@ -60,8 +60,8 @@
     img {
         -o-object-fit: cover;
            object-fit: cover;
-        -o-object-position: 50% 60%;
-           object-position: 50% 60%;
+        -o-object-position: 50% 77%;
+           object-position: 50% 77%;
         height: 172px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
@@ -132,10 +132,7 @@
 
         &__content {
             // width: 80% limits meal's names while the card is unselected
-            width: 80%;
-
-            transform: scaleX(1);
-            transform-origin: left;
+            width: 88%;
     
             h4 {
                 @include robot(5,18,$black);

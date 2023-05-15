@@ -340,8 +340,8 @@ i, span {
 .restaurant__card img {
   -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: 50% 60%;
-  object-position: 50% 60%;
+  -o-object-position: 50% 77%;
+  object-position: 50% 77%;
   height: 172px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -443,9 +443,7 @@ i, span {
   animation: menu-card-anime 400ms 2400ms ease both;
 }
 .menu__card__content {
-  width: 80%;
-  transform: scaleX(1);
-  transform-origin: left;
+  width: 88%;
 }
 .menu__card__content h4 {
   font-family: "Roboto", sans-serif;
