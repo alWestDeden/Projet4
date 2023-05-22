@@ -27,7 +27,6 @@
         z-index: -1;
     }
 
-    // apply (opacity: 1) the partial mask for an hover effect
     &:hover {
         &::before {
             opacity: 1;
@@ -207,7 +206,7 @@
                 }
 
                 &__content {
-                    // width: 65% reduce meal's names width when the card is selected
+                    // width: 69% reduce meal's names width when the card is selected
                     width: 69%;
                 }
             }

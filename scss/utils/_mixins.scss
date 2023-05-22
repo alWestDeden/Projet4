@@ -1,4 +1,4 @@
-//breakpoint
+//breakpoints
 @mixin desktop {
     @media screen and (min-width: map-get($breakpoints, desktop)) {
         @content;
