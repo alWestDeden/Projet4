@@ -206,12 +206,8 @@
 
 // menu selected
 @-webkit-keyframes selected {
-    0%, 25%, 100% {
+    0%, 100% {
         transform-origin: right;
-    }
-
-    25% {
-        opacity: .5;
     }
 
     100% {
@@ -219,12 +215,8 @@
     }
 }
 @keyframes selected {
-    0%, 25%, 100% {
+    0%, 100% {
         transform-origin: right;
-    }
-
-    25% {
-        opacity: .5;
     }
 
     100% {

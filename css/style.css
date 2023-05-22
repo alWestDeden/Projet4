@@ -121,11 +121,8 @@ i, span {
   }
 }
 @keyframes selected {
-  0%, 25%, 100% {
+  0%, 100% {
     transform-origin: right;
-  }
-  25% {
-    opacity: 0.5;
   }
   100% {
     transform: scaleX(1);
